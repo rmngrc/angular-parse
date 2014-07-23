@@ -1,0 +1,74 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>angular-parse</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="stylesheets/app.css">
+  </head>
+  <body>
+  
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-show="currentUser">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">angular-parse</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="nav navbar-nav">
+            <li ng-class="getClass('/dashboard')"><a href="#/dashboard">Dashboard</a></li>
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right" ng-controller="SignIn" ng-show="currentUser">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" target="_self">
+                <span class="glyphicon glyphicon-bell"></span>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#"><span class="glyphicon glyphicon-comment"></span> Notification</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-comment"></span> Notification</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" target="_self">
+                <span class="glyphicon glyphicon-user"></span>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li>{{currentUser.username}}</li>
+                <li><a href="#/profile"><span class="glyphicon glyphicon-user"></span> User profile</a></li>
+                <li><a href="#/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+                <li><a href="#/help"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
+                <li class="divider"></li>
+                <li><a href="#" ng-click="signOut(user)"><span class="glyphicon glyphicon-off"></span> Sign out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div ng-view></div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="//cdn.jsdelivr.net/parse/1.2.9/parse.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="javascripts/app.js"></script>
+    <script src="javascripts/controllers.js"></script>
+    <script src="javascripts/services.js"></script>
+    <script src="javascripts/directives.js"></script>
+    
+  </body>
+</html>

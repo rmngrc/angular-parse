@@ -1,0 +1,16 @@
+{
+  "name": "angular-parse",
+  "version": "0.1.0",
+  "authors": [
+    "@rmngrc"
+  ],
+  "description": "Parse integration into angular app.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
